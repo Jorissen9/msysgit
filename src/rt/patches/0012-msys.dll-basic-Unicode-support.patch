@@ -48,10 +48,10 @@ Signed-off-by: Karsten Blees <blees@dcon.de>
  create mode 100644 msys/rt/src/winsup/cygwin/unicode.c
  create mode 100644 msys/rt/src/winsup/cygwin/unicode.h
 
-diff --git a/msys/rt/src/winsup/cygwin/Makefile.in b/msys/rt/src/winsup/cygwin/Makefile.in
+diff --git a/winsup/cygwin/Makefile.in b/winsup/cygwin/Makefile.in
 index ef0ae9e..c312fb4 100644
---- a/msys/rt/src/winsup/cygwin/Makefile.in
-+++ b/msys/rt/src/winsup/cygwin/Makefile.in
+--- a/winsup/cygwin/Makefile.in
++++ b/winsup/cygwin/Makefile.in
 @@ -129,7 +129,7 @@ DLL_OFILES:=assert.o autoload.o \
  	sched.o sec_acl.o sec_helper.o security.o select.o shared.o shortcut.o \
  	signal.o sigproc.o \
@@ -61,10 +61,10 @@ index ef0ae9e..c312fb4 100644
  	window.o \
  	$(EXTRA_DLL_OFILES) $(EXTRA_OFILES) $(MALLOC_OFILES) $(MT_SAFE_OBJECTS) 
  
-diff --git a/msys/rt/src/winsup/cygwin/fhandler.h b/msys/rt/src/winsup/cygwin/fhandler.h
+diff --git a/winsup/cygwin/fhandler.h b/winsup/cygwin/fhandler.h
 index ea698d6..378235a 100644
---- a/msys/rt/src/winsup/cygwin/fhandler.h
-+++ b/msys/rt/src/winsup/cygwin/fhandler.h
+--- a/winsup/cygwin/fhandler.h
++++ b/winsup/cygwin/fhandler.h
 @@ -685,6 +685,7 @@ private:
    BOOL saw_question_mark;
  
@@ -73,10 +73,10 @@ index ea698d6..378235a 100644
  
    WORD current_win32_attr;
    ansi_intensity intensity;
-diff --git a/msys/rt/src/winsup/cygwin/fhandler_console.cc b/msys/rt/src/winsup/cygwin/fhandler_console.cc
+diff --git a/winsup/cygwin/fhandler_console.cc b/winsup/cygwin/fhandler_console.cc
 index 64ae840..233bf09 100644
---- a/msys/rt/src/winsup/cygwin/fhandler_console.cc
-+++ b/msys/rt/src/winsup/cygwin/fhandler_console.cc
+--- a/winsup/cygwin/fhandler_console.cc
++++ b/winsup/cygwin/fhandler_console.cc
 @@ -30,6 +30,7 @@ details. */
  #include "sigproc.h"
  #include "pinfo.h"
@@ -224,11 +224,11 @@ index 64ae840..233bf09 100644
  	    }
  	  if (!get_w_binary ())
  	    x = 0;
-diff --git a/msys/rt/src/winsup/cygwin/unicode.c b/msys/rt/src/winsup/cygwin/unicode.c
+diff --git a/winsup/cygwin/unicode.c b/winsup/cygwin/unicode.c
 new file mode 100644
 index 0000000..fcb7755
 --- /dev/null
-+++ b/msys/rt/src/winsup/cygwin/unicode.c
++++ b/winsup/cygwin/unicode.c
 @@ -0,0 +1,443 @@
 +
 +#include "winsup.h"
@@ -673,11 +673,11 @@ index 0000000..fcb7755
 +	SetLastError(ERROR_INSUFFICIENT_BUFFER);
 +	return -1;
 +}
-diff --git a/msys/rt/src/winsup/cygwin/unicode.h b/msys/rt/src/winsup/cygwin/unicode.h
+diff --git a/winsup/cygwin/unicode.h b/winsup/cygwin/unicode.h
 new file mode 100644
 index 0000000..30ff8ce
 --- /dev/null
-+++ b/msys/rt/src/winsup/cygwin/unicode.h
++++ b/winsup/cygwin/unicode.h
 @@ -0,0 +1,21 @@
 +#ifndef __UNICODE_H
 +#define __UNICODE_H

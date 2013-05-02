@@ -11,10 +11,10 @@ Signed-off-by: Heiko Voigt <hvoigt@hvoigt.net>
  msys/rt/src/winsup/cygwin/spawn.cc |    6 +-----
  1 files changed, 1 insertions(+), 5 deletions(-)
 
-diff --git a/msys/rt/src/winsup/cygwin/spawn.cc b/msys/rt/src/winsup/cygwin/spawn.cc
+diff --git a/winsup/cygwin/spawn.cc b/winsup/cygwin/spawn.cc
 index e7278e6..108b2f1 100644
---- a/msys/rt/src/winsup/cygwin/spawn.cc
-+++ b/msys/rt/src/winsup/cygwin/spawn.cc
+--- a/winsup/cygwin/spawn.cc
++++ b/winsup/cygwin/spawn.cc
 @@ -515,11 +515,7 @@ spawn_guts (HANDLE hToken, const char * prog_arg, const char *const *argv,
  	  debug_printf("newargv[%d] = %s", i, newargv[i]);
  	  newargv.replace (i, tmpbuf);

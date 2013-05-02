@@ -56,10 +56,10 @@ Signed-off-by: Kirill Smelkov <kirr@landau.phys.spbu.ru>
  msys/rt/src/winsup/cygwin/fhandler_console.cc |   11 +++++++++++
  2 files changed, 12 insertions(+), 1 deletions(-)
 
-diff --git a/msys/rt/src/winsup/cygwin/autoload.cc b/msys/rt/src/winsup/cygwin/autoload.cc
+diff --git a/winsup/cygwin/autoload.cc b/winsup/cygwin/autoload.cc
 index 9ed7007..a921b93 100644
---- a/msys/rt/src/winsup/cygwin/autoload.cc
-+++ b/msys/rt/src/winsup/cygwin/autoload.cc
+--- a/winsup/cygwin/autoload.cc
++++ b/winsup/cygwin/autoload.cc
 @@ -426,7 +426,7 @@ LoadDLLfunc (DispatchMessageA, 4, user32)
  LoadDLLfunc (EmptyClipboard, 0, user32)
  LoadDLLfunc (FindWindowA, 8, user32)
@@ -69,10 +69,10 @@ index 9ed7007..a921b93 100644
  LoadDLLfunc (GetMessageA, 16, user32)
  LoadDLLfunc (GetPriorityClipboardFormat, 8, user32)
  LoadDLLfunc (GetProcessWindowStation, 0, user32)
-diff --git a/msys/rt/src/winsup/cygwin/fhandler_console.cc b/msys/rt/src/winsup/cygwin/fhandler_console.cc
+diff --git a/winsup/cygwin/fhandler_console.cc b/winsup/cygwin/fhandler_console.cc
 index ada15e4..64ae840 100644
---- a/msys/rt/src/winsup/cygwin/fhandler_console.cc
-+++ b/msys/rt/src/winsup/cygwin/fhandler_console.cc
+--- a/winsup/cygwin/fhandler_console.cc
++++ b/winsup/cygwin/fhandler_console.cc
 @@ -913,8 +913,19 @@ fhandler_console::fhandler_console (const char *name) :
       these keyboards right <ALT> (called AltGr) is used to produce the
       shell symbols and should not be interpreted as META. */
