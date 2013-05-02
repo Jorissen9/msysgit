@@ -9,4 +9,4 @@
 	url = git://repo.or.cz/git-cheetah.git/
 [submodule "src/msys"]
 	path = src/msys
-	url = git://repo.or.cz/msys.git
+	url = git://git.code.sf.net/p/mingw/msys-runtime
