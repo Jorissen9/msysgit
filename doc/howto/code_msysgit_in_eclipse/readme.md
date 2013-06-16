@@ -81,3 +81,5 @@ Open the debug configuration dialog via the run menu and create a new C/C++ Appl
    * We're using the separate MinGW debugger, because it's more up to date.
    * GDB Debugger: C:\MinGW\bin\gdb.exe
    * [[https://raw.github.com/hypoport/msysgit/master/doc/howto/code_msysgit_in_eclipse/debug_configuration_gdb.png]]
+
+Happy Hacking msysGit :-)
