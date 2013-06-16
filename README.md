@@ -10,7 +10,7 @@ These are always great events, where a lot of creative ideas show up and get imp
 Last time (June, 13th) we've tried to fix issue 52 and adding support for long path names on Windows.
 
 After 21 hours working, we where able to add, commit, status and diff a file with 643 characters long name.
-We've tweeted a screenshot [https://twitter.com/nitram509/status/345502581654704128]
+We've tweeted a screenshot https://twitter.com/nitram509/status/345502581654704128
 
 See ```issue52-experimental.patch```
 
