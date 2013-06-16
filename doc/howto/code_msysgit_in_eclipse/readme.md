@@ -48,12 +48,18 @@ At this point, you're able to navigate and edit the sources.
 
 #### Fine-tune Project Preferences
 
+* Disable auto build
+   * Because we've didn't configured any build tools, you should disable Project -> Auto build
+   * For our setup, we've only used command line ```make``` tool for building git.
 * Enable PE Windows binary parser in debug configurations
    * Open: Project Preferences -> C/C++ Build -> Settings -> Binary Parser
    * Enable: PE Windows Parser
    * [[https://raw.github.com/hypoport/msysgit/master/doc/howto/code_msysgit_in_eclipse/project_prefs_binary_parser.png]]
    * **Side note**: If this option isn't enabled, you will encounter an error message when starting the debugger. Error message: "Program is not a recognized executable"
 
+#### Build msysGit
+
+* For our experiments, we've used this command ```make clean  ; make CFLAGS=-g3 LDFLAGS=-g3```
 
 #### Debug Launch Configuration
 For this example, we want to debug the ```git-add.exe```.
