@@ -11,18 +11,18 @@ to code on msysGit under Windows, by using Eclipse.
 * preferred: smart search, not only RegEx ;-)
 * nice to have: able to create build within the IDE
 
-As it turns out, with a little knowledge about Eclipse, we've found everything solved by using Eclipse and a separate MinGW installation. The setup is pretty fast and can be done in less than one hour. If you know other Languages and IDEs, you may miss some features, but this setup solved our needs. 
+As it turns out, with a little knowledge about Eclipse, we've found everything solved by using Eclipse and a separate MinGW installation. The setup is pretty fast and can be done in less than one hour. If you know other Languages and IDEs, you may miss some features, but this setup solved our needs. Some aspects/goals are not yet solved (wasn't our focus) - so consider this as a starting point ;-)
 
 #### Install required tools
 1. Of course, first you need to setup msysGit
    * I've used the net installer
-   * See [[InstallMSysGit]]
+   * See [InstallMSysGit](https://github.com/msysgit/msysgit/wiki/InstallMSysGit)
 1. Download Eclipse C/C++ (current version Juno, 4.2 SR2)
    * unzip it somewhere (c:\program files\eclipse)
    * install Java JRE (current version 1.7) - a JRE is sufficient, but installing a JDK is highly recommended
 1. Download MinGW
    * I've used net installer mingw-get-inst-20120426.exe 
-   * install it
+   * install it; for example C:\MinGW (recommended)
    * This is optional, but I recommend it because of newer gdb (debugger) version
 
 #### Setup Eclipse Workspace
@@ -36,4 +36,27 @@ As it turns out, with a little knowledge about Eclipse, we've found everything s
    * click ```advanced```
    * click ```linked folder```
    * specify the msysGit installation path and the ```git``` folder within
-   * [[create_linked_folder_to_msysgit.png]]
+   * [[https://raw.github.com/hypoport/msysgit/master/doc/howto/code_msysgit_in_eclipse/create_linked_folder_to_msysgit.png]]
+
+At this point, you're able to navigate and edit the sources.
+
+#### Debug Launch Configuration
+For this example, we want to debug the ```git-add.exe```.
+
+Open the debug configuration dialog via the run menu and create a new C/C++ Application configuration:
+* Main
+   * Name: git-add.exe
+   * C/C++ Application: C:\msysgit\git\git-add.exe
+   * [[https://raw.github.com/hypoport/msysgit/master/doc/howto/code_msysgit_in_eclipse/debug_configuration.png]]
+* Environment
+   * Add: HOME\_DRIVE C:
+   * Add: HOME\_PATH \Users\username   (your home path)
+   * Add: PATH c:\MinGW\bin
+   * Set: Recplace native environment with specific environment
+   * **Side note**: We're not 100% sure, why the environment has to be replaced, but it worked very well this way :-)
+   * **Side note**: These settings are specific to Windows platform. They may have to be adjusted on different platforms.
+   * [[https://raw.github.com/hypoport/msysgit/master/doc/howto/code_msysgit_in_eclipse/debug_configuration_gdb.png]]
+* Debugger
+   * We're using the separate MinGW debugger, because it's more up to date.
+   * GDB Debugger: C:\MinGW\bin\gdb.exe
+   * [[https://raw.github.com/hypoport/msysgit/master/doc/howto/code_msysgit_in_eclipse/debug_configuration_gdb.png]]
