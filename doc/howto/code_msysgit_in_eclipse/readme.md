@@ -36,3 +36,4 @@ As it turns out, with a little knowledge about Eclipse, we've found everything s
    * click ```advanced```
    * click ```linked folder```
    * specify the msysGit installation path and the ```git``` folder within
+   * [[create_linked_folder_to_msysgit.png]]
